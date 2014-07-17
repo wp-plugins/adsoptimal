@@ -11,7 +11,7 @@
 
 **Mobile Ad for Wordpress by AdsOptimal**
 
-Earn top dollar for your mobile web traffic! Promote mobile apps on your Wordpress site and earn $3 per download by just installing the plugin
+Earn top dollar for your mobile web traffic! Promote mobile apps on your Wordpress site and earn $3 per download by just installing the plugin.
 
 **Features**
 

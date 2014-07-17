@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Mobile Ad for Wordpress by AdsOptimal
 
-Earn top dollar for your mobile web traffic! Promote mobile apps on your Wordpress site and get $3 per download by just installing the plugin, The highest payout you'll find on the web. You don't need a mobile app or an optimized mobile experience to leverage mobile. Start by serving relevant ads to your mobile users with our solution. There's no risk to try!
+Earn top dollar for your mobile web traffic! Promote mobile apps on your Wordpress site and earn $3 per download by just installing the plugin.
 
 Features
 
