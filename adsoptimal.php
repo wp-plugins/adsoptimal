@@ -14,8 +14,10 @@
  * @wordpress-plugin
  * Plugin Name:       AdsOptimal - Mobile Ad
  * Plugin URI:        http://www.adsoptimal.com
- * Description:       EARN TOP DOLLAR FOR YOUR MOBILE WEB TRAFFIC! Promote mobile apps on your website and get $3 per download, The highest payout you'll find on the web. You don't need a mobile app or an optimized mobile experience to leverage mobile. Start by serving relevant ads to your mobile users with our solution. There's no risk to try!
- * Version:           1.0.2
+ * Description:       EARN TOP DOLLAR FOR YOUR MOBILE WEB TRAFFIC! Promote mobile apps on your website and get $3 per download, 
+ * The highest payout you'll find on the web. You don't need a mobile app or an optimized mobile experience to leverage mobile. 
+ * Start by serving relevant ads to your mobile users with our solution. There's no risk to try!
+ * Version:           1.1.1
  * Author:            team@adsoptimal.com
  * Author URI:        http://www.adsoptimal.com/company
  * Text Domain:       adsoptimal-locale
