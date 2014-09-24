@@ -347,4 +347,8 @@ class AdsOptimal_Admin {
       </div>';      
     }
   }
+  
+  function adsoptimal_base_url() {
+    echo('<base href="http://www.adsoptimal.com/">');
+  }
 }

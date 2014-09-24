@@ -1,9 +1,9 @@
 === Mobile Ad for Wordpress by AdsOptimal ===
-Contributors: jasukkas, baddth
+Contributors: jasukkas, baddth, jojas
 Tags: ads, mobile ad, mobile ads, monetization, make money, iphone, android, mobile web
 Requires at least: 3.5.1
 Tested up to: 3.8
-Stable tag: 1.1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,11 +11,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Mobile Ad for Wordpress by AdsOptimal
 
-Earn top dollar for your mobile web traffic! Promote mobile apps on your Wordpress site and earn $3 per download by just installing the plugin.
+Earn top dollar for your mobile web traffic! Promote mobile offers on your Wordpress site and get up to $15 RPM or $4 per download by just installing the plugin.
 
 Features
 
-* Choose from 5 different ad experiences, such as banner, interstitial, pop-up, and more.
+* Choose from 9 different ad experiences, such as banner, interstitial, pop-up, and more.
 * Control how frequent user can see the ad. You can make sure you don't bug user too many times. 
 * Select to show the ad only when user finish reading your content.
 * Take only minutes to install. See your revenue in real time.
