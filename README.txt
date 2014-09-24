@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Mobile Ad for Wordpress by AdsOptimal
 
-Earn top dollar for your mobile web traffic! Promote mobile offers on your Wordpress site and get up to $15 RPM or $4 per download by just installing the plugin.
+Earn top dollar for your mobile web traffic! Promote mobile offers on your Wordpress site and get up to $15 RPM or $3 per download by just installing the plugin.
 
 Features
 
