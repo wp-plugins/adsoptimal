@@ -95,9 +95,10 @@ if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 
 function adsoptimal_script_head() {
 	if (get_option('adsoptimal_settings', '') != '') {
-	?>
-<?php echo json_decode(rawurldecode(get_option('adsoptimal_settings', '{"code-textarea": ""}')), true)['code-textarea'] ?>
-	<?php
+		$object = json_decode(rawurldecode(get_option('adsoptimal_settings', '{"code-textarea": ""}')), true);
+		if ($object && array_key_exists('code-textarea', $object)) {
+			echo $object['code-textarea'];
+		}
 	}
 }
 ?>
