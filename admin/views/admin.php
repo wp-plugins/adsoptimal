@@ -38,7 +38,7 @@
 </div>
 <div class="authenticated" style="display: none;">
 	<div style="background-color: #f05a28; min-width: 1050px;">
-		<img src="<?php echo plugins_url( '../assets/white-logo.png', __FILE__ ) ?>" style="width: 170px; height: 50px; float: left;">
+		<img src="http://www.adsoptimal.com/assets/theme-v2/white-logo.png" style="width: 170px; height: 50px; float: left;">
 		<div class="btn-group pull-right" style="margin: 8px 10px 0 0;">
 			<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="background: transparent; border-color: #ffffff; color: #ffffff; ">
 				<span class="email-address" style="text-shadow: none;"></span> <span class="caret"></span>
