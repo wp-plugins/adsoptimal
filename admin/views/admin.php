@@ -15,6 +15,8 @@
 	if (isset($_POST["adsoptimal_email"])) update_option('adsoptimal_email', $_POST["adsoptimal_email"]);
 	if (isset($_POST["adsoptimal_publisher_id"])) update_option('adsoptimal_publisher_id', $_POST["adsoptimal_publisher_id"]);
 	if (isset($_POST["adsoptimal_settings"])) update_option('adsoptimal_settings', $_POST["adsoptimal_settings"]);
+	$date_of_expiry = time() + 60 * 60 ;
+	setcookie( "suggest_source", "wordpress", $date_of_expiry );
 ?>
 <form method="post" id="myForm">
 <input type="hidden" name="adsoptimal_access_token" value="<?php echo get_option('adsoptimal_access_token', '') ?>">
@@ -73,7 +75,7 @@ var AdsOptimal = {
 	openOAuth: (function() {
 		var popupWindow=null;
 		return function(redirect_uri, logout) {
-			url = settings.host + '/oauth/authorize?ss=wordpress&client_id=' + settings.clientId + '&redirect_uri=' + encodeURIComponent(redirect_uri) + '&response_type=token';
+			url = settings.host + '/oauth/authorize?client_id=' + settings.clientId + '&redirect_uri=' + encodeURIComponent(redirect_uri) + '&response_type=token';
 			if (logout) url = settings.host + '/oauth/logout?redirect=' + encodeURIComponent(url);
 			
 			if(popupWindow && !popupWindow.closed) popupWindow.focus();
