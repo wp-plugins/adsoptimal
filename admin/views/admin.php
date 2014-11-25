@@ -15,8 +15,6 @@
 	if (isset($_POST["adsoptimal_email"])) update_option('adsoptimal_email', $_POST["adsoptimal_email"]);
 	if (isset($_POST["adsoptimal_publisher_id"])) update_option('adsoptimal_publisher_id', $_POST["adsoptimal_publisher_id"]);
 	if (isset($_POST["adsoptimal_settings"])) update_option('adsoptimal_settings', $_POST["adsoptimal_settings"]);
-	$date_of_expiry = time() + 60 * 60 ;
-	setcookie( "suggest_source", "wordpress", $date_of_expiry, '/', 'www.adsoptimal.com' );
 ?>
 <form method="post" id="myForm">
 <input type="hidden" name="adsoptimal_access_token" value="<?php echo get_option('adsoptimal_access_token', '') ?>">
