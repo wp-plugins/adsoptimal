@@ -23,24 +23,24 @@
 <input type="hidden" name="adsoptimal_settings" value="<?php echo get_option('adsoptimal_settings', '{}') ?>">
 </form>
 <div class="authenticate" style="display: none;">
-	<div style="color: #ffffff; width: 350px; margin: 100px auto 0px; padding: 15px; border: solid 1px #ef4036; text-align: center; background-color: #f05a28; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;">
-		<h3 style="margin-top: 0px; font-weight: 300;">Connect Your AdsOptimal Account</h3>
-		<p style="padding: 50px 0;"><a class="btn btn-default connect" href="javascript:void(0);" style="font-size: 15px; line-height: 40px; padding: 0 30px;">Connect AdsOptimal</a></p>
-		<p>Promote mobile offers on your website and get $4 per download. The highest payout you'll find on the web.</p>
+	<div style="box-shadow: 0px 0px 10px #666666; color: #ffffff; width: 350px; margin: 100px auto 0px; padding: 15px; text-align: center; background: url(https://cdn.adsoptimal.com/assets/theme-v3/herounit.bg.topbar.png); background-size: 100% 100%; background-color: #53428d; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;">
+		<h3 style="margin-top: 0px; font-weight: 300; font-family: 'Roboto', sans-serif;">Connect Your AdsOptimal Account</h3>
+		<p style="padding: 50px 0;"><a class="btn btn-outline-inverse connect" href="javascript:void(0);" style="font-size: 15px; line-height: 40px; padding: 0 30px;">Connect AdsOptimal</a></p>
+		<p style="font-weight: 300; font-family: 'Roboto', sans-serif;">Promote mobile offers on your website and get $4 per download. The highest payout you'll find on the web.</p>
 	</div>
 </div>
 <div class="authenticating" style="display: none;">
-	<div style="color: #ffffff; width: 350px; margin: 100px auto 0px; padding: 15px; border: solid 1px #ef4036; text-align: center; background-color: #f05a28; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;">
-		<h3 style="margin-top: 0px; font-weight: 300;">Connect Your AdsOptimal Account</h3>
-		<h4 style="padding: 50px 0; line-height: 42px;">Retrieving Your Account..</h4>
-		<p>Promote mobile offers on your website and get $4 per download. The highest payout you'll find on the web.</p>
+	<div style="box-shadow: 0px 0px 10px #666666; color: #ffffff; width: 350px; margin: 100px auto 0px; padding: 15px; text-align: center; background: url(https://cdn.adsoptimal.com/assets/theme-v3/herounit.bg.topbar.png); background-size: 100% 100%; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;">
+		<h3 style="margin-top: 0px; font-weight: 300; font-family: 'Roboto', sans-serif;">Connect Your AdsOptimal Account</h3>
+		<h4 style="padding: 50px 0; line-height: 42px; font-weight: 300; font-family: 'Roboto', sans-serif;">Retrieving Your Account..</h4>
+		<p style="font-weight: 300; font-family: 'Roboto', sans-serif;">Promote mobile offers on your website and get $4 per download. The highest payout you'll find on the web.</p>
 	</div>
 </div>
 <div class="authenticated" style="display: none;">
-	<div style="background-color: #f05a28; min-width: 1050px;">
+	<div style="background: url(https://cdn.adsoptimal.com/assets/theme-v3/herounit.bg.topbar.png); background-size: 100% 100%; min-width: 940px;">
 		<img src="http://www.adsoptimal.com/assets/theme-v2/white-logo.png" style="width: 170px; height: 50px; float: left;">
 		<div class="btn-group pull-right" style="margin: 8px 10px 0 0;">
-			<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="background: transparent; border-color: #ffffff; color: #ffffff; ">
+			<button class="btn btn-outline-inverse dropdown-toggle" type="button" data-toggle="dropdown" style="">
 				<span class="email-address" style="text-shadow: none;"></span> <span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu">
@@ -48,25 +48,36 @@
 			</ul>
 		</div>
 		<div class="btn-group pull-right" style="margin: 8px 10px 0 0;">
-			<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="background: transparent; border-color: #ffffff; color: #ffffff; ">
+			<button class="btn btn-outline-inverse dropdown-toggle" type="button" data-toggle="dropdown" style="">
 				<span class="earning" style="text-shadow: none;">$0.00</span> <span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu">
-				<li><a href="http://www.adsoptimal.com/customer/insights" target="_blank">Insights</a></li>
-				<li><a href="http://www.adsoptimal.com/customer/payout" target="_blank">Payout</a></li>
+				<li><a href="https://www.adsoptimal.com/customer/insights" target="_blank">Insights</a></li>
+				<li><a href="https://www.adsoptimal.com/customer/payout" target="_blank">Payout</a></li>
 			</ul>
 		</div>
 		<div style="clear: both;"></div>
 	</div>
-	<div class="adsoptimal-injection-container" style="width: 1050px; margin: 0 auto; background-color: #ffffff;">
+	<?php if (isset($_POST["adsoptimal_settings"])) { ?>
+	<div class="container" style="padding-top: 10px;">
+		<div class="alert alert-success" style="font-family: 'Helvetica W01 Light', 'Roboto', sans-serif; font-weight: 300; font-size: 16px; line-height: 20px; margin-bottom: 8px;"><span class="icon success"></span> Your changes have been saved successfully.</div>
+	</div>
+	<?php } ?>
+	<div class="adsoptimal-injection-container" style="margin: 0 auto; background-color: #ffffff;">
 	</div>
 </div>
 <script type="text/javascript" charset="utf-8">
 var $ = jQuery;
 var settings = {
-	'host':     "https://www.adsoptimal.com"
+	'host':     "//www.adsoptimal.com"
 , 'clientId': "8d1ccad0433322bed59691fb0d6367a1f4846da1b70ce114cacc7202478e6cd9"
+, 'api': "v3"
 };
+/*var settings = {
+	'host':     "http://localhost:3000"
+, 'clientId': "8d1ccad0433322bed59691fb0d6367a1f4846da1b70ce114cacc7202478e6cd9"
+, 'api': "v3"
+};*/
 var VIEW = { AUTHENTICATE:0, AUTHENTICATING:1, AUTHENTICATED:2 };
 
 var AdsOptimal = {
@@ -77,7 +88,7 @@ var AdsOptimal = {
 			if (logout) url = settings.host + '/oauth/logout?redirect=' + encodeURIComponent(url);
 			
 			if(popupWindow && !popupWindow.closed) popupWindow.focus();
-			else popupWindow = window.open(url,"_blank","directories=no, status=no, menubar=no, scrollbars=yes, resizable=no,width=515, height=330,top=" + (screen.height - 330)/2 + ",left=" + (screen.width - 515)/2);
+			else popupWindow = window.open(url,"_blank","directories=no, status=no, menubar=no, scrollbars=yes, resizable=no,width=515, height=600,top=" + (screen.height - 600)/2 + ",left=" + (screen.width - 515)/2);
 			
 			function parent_disable() {
 				if(popupWindow && !popupWindow.closed) popupWindow.focus();
@@ -125,7 +136,7 @@ var AdsOptimal = {
 		AdsOptimal.switchView(VIEW.AUTHENTICATING);
 		
 		$.ajax({
-				url: settings.host + '/api/v1/publisher_info'
+				url: settings.host + '/api/' + settings.api + '/publisher_info'
 			, beforeSend: function (xhr) {
 					xhr.setRequestHeader('Authorization', "Bearer " + token);
 					xhr.setRequestHeader('Accept',        "application/json");
@@ -173,7 +184,7 @@ var AdsOptimal = {
 				$('.earning').text('...');
 				if ($('[name="adsoptimal_access_token"]').val()) {
 					$.ajax({
-							url: settings.host + '/api/v1/insight_info'
+							url: settings.host + '/api/' + settings.api + '/insight_info'
 						, beforeSend: function (xhr) {
 								xhr.setRequestHeader('Authorization', "Bearer " + $('[name="adsoptimal_access_token"]').val());
 								xhr.setRequestHeader('Accept',        "application/json");
@@ -189,7 +200,7 @@ var AdsOptimal = {
 				}
 				
 				$.ajax({
-						url: settings.host + '/api/v1/settings_injection.html'
+						url: settings.host + '/api/' + settings.api + '/settings_injection.html'
 					, beforeSend: function (xhr) {
 							xhr.setRequestHeader('Authorization', "Bearer " + $('[name="adsoptimal_access_token"]').val());
 							xhr.setRequestHeader('Accept',        "text/html");
@@ -212,3 +223,6 @@ var AdsOptimal = {
 };
 AdsOptimal.initialize();
 </script>
+<style type="text/css">
+.container { width: 940px !important; }
+</style>
