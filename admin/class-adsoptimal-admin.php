@@ -89,7 +89,13 @@ class AdsOptimal_Admin {
 		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
     
     add_action( 'admin_notices', array( $this, 'add_plugin_warning' ) );
+    
+    add_action( 'admin_head', array( $this, 'admin_header' ) );
 	}
+  
+  public static function admin_header() {
+    echo "<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>";
+  }
 
 	/**
 	 * Return an instance of this class.
@@ -265,7 +271,8 @@ class AdsOptimal_Admin {
             min-width:825px;
             padding:7px;
             margin:15px 0;
-            background:#f05a28;
+            background: url(https://cdn.adsoptimal.com/assets/theme-v3/herounit.bg.topbar.png);
+            background-size: 100% 100%;
             -moz-border-radius:3px;
             border-radius:3px;
             -webkit-border-radius:3px;
@@ -274,13 +281,7 @@ class AdsOptimal_Admin {
           }
           .adsoptimal_activate .aa_button {
             cursor: pointer;
-            -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-            -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-            box-shadow:inset 0px 1px 0px 0px #ffffff;
-            background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9) );
-            background:-moz-linear-gradient( center top, #f9f9f9 5%, #e9e9e9 100% );
-            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#f9f9f9", endColorstr="#e9e9e9");
-            background-color:#f9f9f9;
+            background-color: transparent;
             -webkit-border-top-left-radius:3px;
             -moz-border-radius-topleft:3px;
             border-top-left-radius:3px;
@@ -294,9 +295,9 @@ class AdsOptimal_Admin {
             -moz-border-radius-bottomleft:3px;
             border-bottom-left-radius:3px;
             text-indent:0;
-            border:1px solid #dcdcdc;
+            border:1px solid #ffffff;
             display:inline-block;
-            color:#333333;
+            color:#ffffff;
             font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
             font-size:15px;
             font-weight:normal;
@@ -306,17 +307,9 @@ class AdsOptimal_Admin {
             width:275px;
             text-decoration:none;
             text-align:center;
-            text-shadow:1px 1px 0px #ffffff;
           }
           .adsoptimal_activate .aa_button:hover {
-            background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9) );
-            background:-moz-linear-gradient( center top, #e9e9e9 5%, #f9f9f9 100% );
-            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#e9e9e9", endColorstr="#f9f9f9");
-            background-color:#e9e9e9;
-          }
-          .adsoptimal_activate .aa_button:active {
-            position:relative;
-            top:1px;
+            background-color: rgba(255,255,255,0.5);
           }
           /* This button was generated using CSSButtonGenerator.com */
           .adsoptimal_activate .aa_description {

@@ -18,3 +18,47 @@
 .nav-pills > .active > a, .nav-pills > .active > a:hover {
   background-color: #f05a28 !important;
 }
+
+.btn-outline-inverse,
+.btn-outline-inverse:focus,
+.btn-outline-inverse:active,
+.btn-outline-inverse:hover,
+.open .btn-outline-inverse,
+.open .btn-outline-inverse:focus,
+.open .btn-outline-inverse:active,
+.open .btn-outline-inverse:hover
+{
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.btn-outline-inverse.no-border,
+.open .btn-outline-inverse.no-border {
+  border-color: transparent;
+}
+
+.btn-outline-inverse:active,
+.btn-outline-inverse:hover,
+.open .btn-outline-inverse:active,
+.open .btn-outline-inverse:hover
+{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-primary,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary:hover
+{
+    color: #7762b9;
+    background-color: transparent;
+    border-color: #7762b9;
+}
+
+.btn-outline-primary:active,
+.btn-outline-primary:hover
+{
+  background-color: #7762b9;
+  color: #ffffff;
+}

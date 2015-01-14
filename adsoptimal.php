@@ -17,7 +17,7 @@
  * Description:       Earn top dollar for your mobile web traffic! Promote mobile offers on your WordPress site and get up to $15 RPM or $4 per download 
  * The highest payout you'll find on the web. You don't need a mobile app or an optimized mobile experience to leverage mobile. 
  * Start by serving relevant ads to your mobile users with our solution. There's no risk to try!
- * Version:           1.2.2
+ * Version:           1.3.0
  * Author:            team@adsoptimal.com
  * Author URI:        http://www.adsoptimal.com/company
  * Text Domain:       adsoptimal-locale
@@ -95,9 +95,9 @@ if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 
 function adsoptimal_script_head() {
 	if (get_option('adsoptimal_settings', '') != '') {
-		$object = json_decode(rawurldecode(get_option('adsoptimal_settings', '{"code-textarea": ""}')), true);
-		if ($object && array_key_exists('code-textarea', $object)) {
-			echo $object['code-textarea'];
+		$object = json_decode(rawurldecode(get_option('adsoptimal_settings', '{"jscode": ""}')), true);
+		if ($object && array_key_exists('jscode', $object)) {
+			echo $object['jscode'];
 		}
 	}
 }
