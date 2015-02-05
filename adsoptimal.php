@@ -14,9 +14,7 @@
  * @wordpress-plugin
  * Plugin Name:       AdsOptimal - Mobile Ad
  * Plugin URI:        http://www.adsoptimal.com
- * Description:       Earn top dollar for your mobile web traffic! Promote mobile offers on your WordPress site and get up to $15 RPM or $4 per download 
- * The highest payout you'll find on the web. You don't need a mobile app or an optimized mobile experience to leverage mobile. 
- * Start by serving relevant ads to your mobile users with our solution. There's no risk to try!
+ * Description:       AdsOptimal offers innovative ad unit, designed and optimized for mobile sites. We make the ad load faster and make it easier on various smart devices.
  * Version:           1.3.1
  * Author:            team@adsoptimal.com
  * Author URI:        http://www.adsoptimal.com/company
