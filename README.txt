@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Mobile Ad for Wordpress by AdsOptimal
 
-Earn top dollar for your mobile web traffic! Promote mobile offers on your Wordpress site and get up to $15 RPM or $4 per download by just installing the plugin.
+AdsOptimal offers innovative ad unit, designed and optimized for mobile sites. We make the ad load faster and make it easier on various smart devices.
 
 Features
 
@@ -64,7 +64,7 @@ No change log at this moment.
 No upgrade notice at this moment.
 
 == Screenshots ==
-1. Choose ad experience that fit with your Wordpress site.
-2. Preview of our mobile ad. App-Store-like experience.
-3. Preview of our mobile ad. Standard banner format.
-4. Preview of our mobile ad. Contextual style. 
+1. Seamless integration within minutes.
+2. Preview of our mobile ad. TOPINLINE format.
+3. Innovation Ad Unit. Responsive Desing.
+4. Work across all devices. 
