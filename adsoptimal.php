@@ -15,7 +15,7 @@
  * Plugin Name:       AdsOptimal - Mobile Ad
  * Plugin URI:        http://www.adsoptimal.com
  * Description:       AdsOptimal offers innovative ad unit, designed and optimized for mobile sites. We make the ad load faster and make it easier on various smart devices.
- * Version:           1.3.2
+ * Version:           1.3.3
  * Author:            team@adsoptimal.com
  * Author URI:        http://www.adsoptimal.com/company
  * Text Domain:       adsoptimal-locale
@@ -190,7 +190,7 @@ function adsoptimal_content($content = '') {
 	
 	if (!is_admin() && !is_feed() && !is_robots() && !is_trackback()) {
 		$size = split('x', get_option('adsoptimal_content_ad_type', ''));
-		$adHtml = '<div style="text-align:'.get_option('adsoptimal_content_ad_alignment', 'center').';"><div class="adsoptimal-slot" style="width: '.$size[0].'px; height: '.$size[1].'px; display: inline-block;"></div></div>';
+		$adHtml = '<div style="text-align:'.get_option('adsoptimal_content_ad_alignment', 'center').'; padding: 15px 0;"><div class="adsoptimal-slot" style="width: '.$size[0].'px; height: '.$size[1].'px; display: inline-block;"></div></div>';
 		
 		$sharedParams = new SharedParams();
 		$dom = new DOMDocument();
