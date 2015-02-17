@@ -15,7 +15,7 @@
  * Plugin Name:       AdsOptimal - Mobile Ad
  * Plugin URI:        http://www.adsoptimal.com
  * Description:       AdsOptimal offers innovative ad unit, designed and optimized for mobile sites. We make the ad load faster and make it easier on various smart devices.
- * Version:           1.3.3
+ * Version:           1.3.4
  * Author:            team@adsoptimal.com
  * Author URI:        http://www.adsoptimal.com/company
  * Text Domain:       adsoptimal-locale
@@ -126,7 +126,7 @@ function adsoptimal_loop_start(&$wp_query) {
 	global $wp_the_query;
 	if (($wp_query === $wp_the_query) && !is_admin() && !is_feed() && !is_robots() && !is_trackback()) {
 		$size = split('x', get_option('adsoptimal_top_ad_type', ''));
-		echo '<div style="text-align:'.get_option('adsoptimal_top_ad_alignment', 'center').';"><div class="adsoptimal-slot" style="width: '.$size[0].'px; height: '.$size[1].'px; display: inline-block;"></div></div>';
+		echo '<div style="text-align:'.get_option('adsoptimal_top_ad_alignment', 'center').'; padding: 15px 0;"><div class="adsoptimal-slot" style="width: '.$size[0].'px; height: '.$size[1].'px; display: inline-block;"></div></div>';
 	}
 }
 function adsoptimal_loop_end(&$wp_query) {
@@ -138,7 +138,7 @@ function adsoptimal_loop_end(&$wp_query) {
 	global $wp_the_query;
 	if (($wp_query === $wp_the_query) && !is_admin() && !is_feed() && !is_robots() && !is_trackback()) {
 		$size = split('x', get_option('adsoptimal_footer_ad_type', ''));
-		echo '<div style="text-align:'.get_option('adsoptimal_footer_ad_alignment', 'center').';"><div class="adsoptimal-slot" style="width: '.$size[0].'px; height: '.$size[1].'px; display: inline-block;"></div></div>';
+		echo '<div style="text-align:'.get_option('adsoptimal_footer_ad_alignment', 'center').'; padding: 15px 0;"><div class="adsoptimal-slot" style="width: '.$size[0].'px; height: '.$size[1].'px; display: inline-block;"></div></div>';
 	}
 }
 
