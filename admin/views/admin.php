@@ -15,12 +15,34 @@
 	if (isset($_POST["adsoptimal_email"])) update_option('adsoptimal_email', $_POST["adsoptimal_email"]);
 	if (isset($_POST["adsoptimal_publisher_id"])) update_option('adsoptimal_publisher_id', $_POST["adsoptimal_publisher_id"]);
 	if (isset($_POST["adsoptimal_settings"])) update_option('adsoptimal_settings', $_POST["adsoptimal_settings"]);
+	
+	if (isset($_POST["enable_desktop_ad"])) update_option('adsoptimal_enable_desktop_ad', $_POST["enable_desktop_ad"]);
+	if (isset($_POST["top_ad_alignment"])) update_option('adsoptimal_top_ad_alignment', $_POST["top_ad_alignment"]);
+	if (isset($_POST["content_ad_alignment"])) update_option('adsoptimal_content_ad_alignment', $_POST["content_ad_alignment"]);
+	if (isset($_POST["footer_ad_alignment"])) update_option('adsoptimal_footer_ad_alignment', $_POST["footer_ad_alignment"]);
+	if (isset($_POST["enable_post_ad"])) update_option('adsoptimal_enable_post_ad', $_POST["enable_post_ad"]);
+	if (isset($_POST["enable_page_ad"])) update_option('adsoptimal_enable_page_ad', $_POST["enable_page_ad"]);
+	
+	if (isset($_POST["top_ad_type"])) update_option('adsoptimal_top_ad_type', $_POST["top_ad_type"]);
+	if (isset($_POST["content_ad_type"])) update_option('adsoptimal_content_ad_type', $_POST["content_ad_type"]);
+	if (isset($_POST["footer_ad_type"])) update_option('adsoptimal_footer_ad_type', $_POST["footer_ad_type"]);
+	if (isset($_POST["content_ad_every"])) update_option('adsoptimal_content_ad_every', $_POST["content_ad_every"]);
 ?>
 <form method="post" id="myForm">
 <input type="hidden" name="adsoptimal_access_token" value="<?php echo get_option('adsoptimal_access_token', '') ?>">
 <input type="hidden" name="adsoptimal_email" value="<?php echo get_option('adsoptimal_email', '') ?>">
 <input type="hidden" name="adsoptimal_publisher_id" value="<?php echo get_option('adsoptimal_publisher_id', '') ?>">
 <input type="hidden" name="adsoptimal_settings" value="<?php echo get_option('adsoptimal_settings', '{}') ?>">
+<input ao-switch="enable_desktop_ad" id="enable_desktop_ad" name="enable_desktop_ad" type="hidden" value="<?php echo get_option('adsoptimal_enable_desktop_ad', 'false') ?>">
+<input ao-switch="top_ad_alignment" id="top_ad_alignment" name="top_ad_alignment" type="hidden" value="<?php echo get_option('adsoptimal_top_ad_alignment', 'center') ?>">
+<input ao-switch="content_ad_alignment" id="content_ad_alignment" name="content_ad_alignment" type="hidden" value="<?php echo get_option('adsoptimal_content_ad_alignment', 'center') ?>">
+<input ao-switch="footer_ad_alignment" id="footer_ad_alignment" name="footer_ad_alignment" type="hidden" value="<?php echo get_option('adsoptimal_footer_ad_alignment', 'center') ?>">
+<input ao-switch="enable_post_ad" id="enable_post_ad" name="enable_post_ad" type="hidden" value="<?php echo get_option('adsoptimal_enable_post_ad', 'true') ?>">
+<input ao-switch="enable_page_ad" id="enable_page_ad" name="enable_page_ad" type="hidden" value="<?php echo get_option('adsoptimal_enable_page_ad', 'true') ?>">
+<input type="hidden" name="top_ad_type" value="<?php echo get_option('adsoptimal_top_ad_type', '300x250') ?>">
+<input type="hidden" name="content_ad_type" value="<?php echo get_option('adsoptimal_content_ad_type', '300x250') ?>">
+<input type="hidden" name="footer_ad_type" value="<?php echo get_option('adsoptimal_footer_ad_type', '300x250') ?>">
+<input type="hidden" name="content_ad_every" value="<?php echo get_option('adsoptimal_content_ad_every', '100') ?>">
 </form>
 <div class="authenticate" style="display: none;">
 	<div style="box-shadow: 0px 0px 10px #666666; color: #ffffff; width: 350px; margin: 100px auto 0px; padding: 15px; text-align: center; background: url(https://cdn.adsoptimal.com/assets/theme-v3/herounit.bg.topbar.png); background-size: 100% 100%; background-color: #53428d; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;">
@@ -72,11 +94,13 @@ var settings = {
 	'host':     "//www.adsoptimal.com"
 , 'clientId': "8d1ccad0433322bed59691fb0d6367a1f4846da1b70ce114cacc7202478e6cd9"
 , 'api': "v3"
+, 'extraParams': "client=1.1&cms=wordpress"
 };
 /*var settings = {
 	'host':     "http://localhost:3000"
 , 'clientId': "8d1ccad0433322bed59691fb0d6367a1f4846da1b70ce114cacc7202478e6cd9"
 , 'api': "v3"
+, 'extraParams': "client=1.1&cms=wordpress"
 };*/
 var VIEW = { AUTHENTICATE:0, AUTHENTICATING:1, AUTHENTICATED:2 };
 
@@ -136,7 +160,7 @@ var AdsOptimal = {
 		AdsOptimal.switchView(VIEW.AUTHENTICATING);
 		
 		$.ajax({
-				url: settings.host + '/api/' + settings.api + '/publisher_info'
+				url: settings.host + '/api/' + settings.api + '/publisher_info?' + settings.extraParams
 			, beforeSend: function (xhr) {
 					xhr.setRequestHeader('Authorization', "Bearer " + token);
 					xhr.setRequestHeader('Accept',        "application/json");
@@ -184,7 +208,7 @@ var AdsOptimal = {
 				$('.earning').text('...');
 				if ($('[name="adsoptimal_access_token"]').val()) {
 					$.ajax({
-							url: settings.host + '/api/' + settings.api + '/insight_info'
+							url: settings.host + '/api/' + settings.api + '/insight_info?' + settings.extraParams
 						, beforeSend: function (xhr) {
 								xhr.setRequestHeader('Authorization', "Bearer " + $('[name="adsoptimal_access_token"]').val());
 								xhr.setRequestHeader('Accept',        "application/json");
@@ -200,7 +224,7 @@ var AdsOptimal = {
 				}
 				
 				$.ajax({
-						url: settings.host + '/api/' + settings.api + '/settings_injection.html'
+						url: settings.host + '/api/' + settings.api + '/settings_injection.html?' + settings.extraParams
 					, beforeSend: function (xhr) {
 							xhr.setRequestHeader('Authorization', "Bearer " + $('[name="adsoptimal_access_token"]').val());
 							xhr.setRequestHeader('Accept',        "text/html");

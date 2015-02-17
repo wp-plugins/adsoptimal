@@ -15,7 +15,7 @@
  * Plugin Name:       AdsOptimal - Mobile Ad
  * Plugin URI:        http://www.adsoptimal.com
  * Description:       AdsOptimal offers innovative ad unit, designed and optimized for mobile sites. We make the ad load faster and make it easier on various smart devices.
- * Version:           1.3.1
+ * Version:           1.3.5
  * Author:            team@adsoptimal.com
  * Author URI:        http://www.adsoptimal.com/company
  * Text Domain:       adsoptimal-locale
@@ -61,8 +61,12 @@ register_deactivation_hook( __FILE__, array( 'AdsOptimal', 'deactivate' ) );
  * - replace Plugin_Name with the name of the class defined in
  *   `class-adsoptimal.php`
  */
-add_action( 'plugins_loaded', array( 'AdsOptimal', 'get_instance' ) );
+add_action('plugins_loaded', array('AdsOptimal', 'get_instance'));
 add_action('wp_head', 'adsoptimal_script_head');
+
+add_action('loop_start', 'adsoptimal_loop_start');
+add_action('loop_end', 'adsoptimal_loop_end');
+add_filter('the_content', 'adsoptimal_content');
 
 /*----------------------------------------------------------------------------*
  * Dashboard and Administrative Functionality
@@ -98,5 +102,106 @@ function adsoptimal_script_head() {
 			echo $object['jscode'];
 		}
 	}
+	if (get_option('adsoptimal_enable_desktop_ad', 'false') == 'true') {
+		?>
+<script type='text/javascript'>
+(function(w) {
+w.MobileMonetizer=w.MobileMonetizer||{}; var t={ID:'<?php echo get_option('adsoptimal_publisher_id', '') ?>'};
+for(var a in t) w.MobileMonetizer[a]=t[a];
+var d=document,h=d.getElementsByTagName('head')[0],j=d.createElement('script');
+j.setAttribute('src','//www.adsoptimal.com/advertisement/manual.js');
+h.appendChild(j);
+})(window);
+</script>
+		<?php
+	}
+}
+
+function adsoptimal_loop_start(&$wp_query) {
+	if (get_option('adsoptimal_enable_desktop_ad', 'false') == 'false') return;
+	if (get_option('adsoptimal_top_ad_type', '') == '') return;
+	if (is_single() && get_option('adsoptimal_enable_post_ad', 'true') == 'false') return;
+	if (!is_single() && get_option('adsoptimal_enable_page_ad', 'true') == 'false') return;
+	
+	global $wp_the_query;
+	if (($wp_query === $wp_the_query) && !is_admin() && !is_feed() && !is_robots() && !is_trackback()) {
+		$size = split('x', get_option('adsoptimal_top_ad_type', ''));
+		echo '<div style="text-align:'.get_option('adsoptimal_top_ad_alignment', 'center').'; padding: 15px 0;"><div class="adsoptimal-slot" style="width: '.$size[0].'px; height: '.$size[1].'px; display: inline-block;"></div></div>';
+	}
+}
+function adsoptimal_loop_end(&$wp_query) {
+	if (get_option('adsoptimal_enable_desktop_ad', 'false') == 'false') return;
+	if (get_option('adsoptimal_footer_ad_type', '') == '') return;
+	if (is_single() && get_option('adsoptimal_enable_post_ad', 'true') == 'false') return;
+	if (!is_single() && get_option('adsoptimal_enable_page_ad', 'true') == 'false') return;
+	
+	global $wp_the_query;
+	if (($wp_query === $wp_the_query) && !is_admin() && !is_feed() && !is_robots() && !is_trackback()) {
+		$size = split('x', get_option('adsoptimal_footer_ad_type', ''));
+		echo '<div style="text-align:'.get_option('adsoptimal_footer_ad_alignment', 'center').'; padding: 15px 0;"><div class="adsoptimal-slot" style="width: '.$size[0].'px; height: '.$size[1].'px; display: inline-block;"></div></div>';
+	}
+}
+
+class SharedParams {
+	public $countWord = 0;
+	public $foundDot = false;
+	public $insertCount = 0;
+	public $targetAt = 100;
+	function __construct() {
+		$this->targetAt = intval(get_option('adsoptimal_content_ad_every', '100'));
+	}
+}
+function addContentAd(DOMNode $domNode, $sharedParams) {
+	foreach ($domNode->childNodes as $node)
+	{
+		if ($sharedParams->insertCount >= 2) return;
+		
+		if ($node->nodeType == XML_TEXT_NODE) {
+			$splitedText = split(' ', $node->nodeValue);
+			for ($i=0; $i<count($splitedText); $i++) {
+				$sharedParams->countWord += 1;
+				if ($sharedParams->countWord >= $sharedParams->targetAt) {
+					if ($sharedParams->foundDot) {
+						$splitedText[$i] = '[ADSOPTIMAL_AD_TAG]'.$splitedText[$i];
+						$sharedParams->insertCount += 1;
+						$sharedParams->countWord = 0;
+						$sharedParams->foundDot = false;
+					}
+					elseif (strpos($splitedText[$i], '.') !== false) {
+						$sharedParams->foundDot = true;
+					}
+				}
+			}
+			$node->nodeValue = join(' ', $splitedText);
+		}
+		
+		if($node->hasChildNodes()) {
+			addContentAd($node, $sharedParams);
+		}
+	}    
+}
+
+function adsoptimal_content($content = '') {
+	if (get_option('adsoptimal_enable_desktop_ad', 'false') == 'false') return $content;
+	if (get_option('adsoptimal_content_ad_type', '') == '') return $content;
+	if (is_single() && get_option('adsoptimal_enable_post_ad', 'true') == 'false') return $content;
+	if (!is_single() && get_option('adsoptimal_enable_page_ad', 'true') == 'false') return $content;
+	if (!is_single()) return $content;
+	
+	if (!is_admin() && !is_feed() && !is_robots() && !is_trackback()) {
+		$size = split('x', get_option('adsoptimal_content_ad_type', ''));
+		$adHtml = '<div style="text-align:'.get_option('adsoptimal_content_ad_alignment', 'center').'; padding: 15px 0;"><div class="adsoptimal-slot" style="width: '.$size[0].'px; height: '.$size[1].'px; display: inline-block;"></div></div>';
+		
+		$sharedParams = new SharedParams();
+		$dom = new DOMDocument();
+		$dom->loadHTML('<div>'.$content.'</div>');
+		addContentAd($dom, $sharedParams);
+		
+		$html = $dom->saveHTML();
+		$html = str_replace('[ADSOPTIMAL_AD_TAG]', $adHtml, $html);
+		
+		return $html;
+	}
+	else return $content;
 }
 ?>
