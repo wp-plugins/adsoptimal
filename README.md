@@ -1,5 +1,5 @@
 ## Mobile Ad for Wordpress by AdsOptimal ##
-**Contributors:** jasukkas, baddth, Jojas
+**Contributors:** jasukkas, baddth, sakares
 **Tags:** ads, mobile ad, mobile ads, monetization, make money, iphone, android, mobile web
 **Requires at least:** 3.5.1
 **Tested up to:** 3.8
