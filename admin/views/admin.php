@@ -48,14 +48,14 @@
 	<div style="box-shadow: 0px 0px 10px #666666; color: #ffffff; width: 350px; margin: 100px auto 0px; padding: 15px; text-align: center; background: url(https://cdn.adsoptimal.com/assets/theme-v3/herounit.bg.topbar.png); background-size: 100% 100%; background-color: #53428d; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;">
 		<h3 style="margin-top: 0px; font-weight: 300; font-family: 'Roboto', sans-serif;">Connect Your AdsOptimal Account</h3>
 		<p style="padding: 50px 0;"><a class="btn btn-outline-inverse connect" href="javascript:void(0);" style="font-size: 15px; line-height: 40px; padding: 0 30px;">Connect AdsOptimal</a></p>
-		<p style="font-weight: 300; font-family: 'Roboto', sans-serif;">Earn highest revenues for your mobile web. The highest payout you'll find on the web.</p>
+		<p style="font-weight: 300; font-family: 'Roboto', sans-serif;">Earn highest revenues for your mobile web. Monetize with innovative ads and reach powered buyers.</p>
 	</div>
 </div>
 <div class="authenticating" style="display: none;">
 	<div style="box-shadow: 0px 0px 10px #666666; color: #ffffff; width: 350px; margin: 100px auto 0px; padding: 15px; text-align: center; background: url(https://cdn.adsoptimal.com/assets/theme-v3/herounit.bg.topbar.png); background-size: 100% 100%; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;">
 		<h3 style="margin-top: 0px; font-weight: 300; font-family: 'Roboto', sans-serif;">Connect Your AdsOptimal Account</h3>
 		<h4 style="padding: 50px 0; line-height: 42px; font-weight: 300; font-family: 'Roboto', sans-serif;">Retrieving Your Account..</h4>
-		<p style="font-weight: 300; font-family: 'Roboto', sans-serif;">Earn highest revenues for your mobile web. The highest payout you'll find on the web.</p>
+		<p style="font-weight: 300; font-family: 'Roboto', sans-serif;">Earn highest revenues for your mobile web. Monetize with innovative ads and reach powered buyers.</p>
 	</div>
 </div>
 <div class="authenticated" style="display: none;">
