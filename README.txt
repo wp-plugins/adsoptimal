@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Mobile Ad for Wordpress by AdsOptimal
 
-AdsOptimal offers innovative ad unit, designed and optimized for mobile sites. We make the ad load faster and make it easier on various smart devices.
+AdsOptimal offers innovative ad unit, designed and optimized for mobile sites. We make the ad load faster and make it easier on various smart devices. We also offers desktop ad unit that can be enabled by just simple clicks.
 
 Features
 
@@ -65,6 +65,7 @@ No upgrade notice at this moment.
 
 == Screenshots ==
 1. Seamless integration within minutes.
-2. Preview of our mobile ad. TOPINLINE format.
-3. Innovation Ad Unit. Responsive Design.
-4. Work across all devices. 
+2. Enable desktop ad unit at your fingertips.
+3. Preview of our mobile ad. TOPINLINE format.
+4. Innovation Ad Unit. Responsive Design.
+5. Work across all devices. 
