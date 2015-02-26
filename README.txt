@@ -1,8 +1,8 @@
 === Mobile Ad for Wordpress by AdsOptimal ===
 Contributors: jasukkas, baddth, sakares
-Tags: ads, mobile ad, mobile ads, monetization, make money, iphone, android, mobile web
+Tags: ads, mobile ad, mobile ads, monetization, make money, iphone, android, mobile web, ad network
 Requires at least: 3.5.1
-Tested up to: 3.8
+Tested up to: 4.1.1
 Stable tag: 1.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -15,7 +15,7 @@ AdsOptimal offers innovative ad unit, designed and optimized for mobile sites. W
 
 Features
 
-* Choose from 9 different ad experiences, such as banner, interstitial, pop-up, and more.
+* Choose from 4 different ad experiences, such as banner, interstitial, topinline, and more.
 * Control how frequent user can see the ad. You can make sure you don't bug user too many times. 
 * Select to show the ad only when user finish reading your content.
 * Take only minutes to install. See your revenue in real time.
@@ -66,5 +66,5 @@ No upgrade notice at this moment.
 == Screenshots ==
 1. Seamless integration within minutes.
 2. Preview of our mobile ad. TOPINLINE format.
-3. Innovation Ad Unit. Responsive Desing.
+3. Innovation Ad Unit. Responsive Design.
 4. Work across all devices. 
