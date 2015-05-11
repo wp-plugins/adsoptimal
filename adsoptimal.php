@@ -15,7 +15,7 @@
  * Plugin Name:       AdsOptimal - Mobile Ad
  * Plugin URI:        http://www.adsoptimal.com
  * Description:       AdsOptimal offers innovative ad unit, designed and optimized for mobile sites. We make the ad load faster and make it easier on various smart devices. We also offers desktop ad unit that can be enabled by just simple clicks.
- * Version:           1.3.5
+ * Version:           1.4.0
  * Author:            team@adsoptimal.com
  * Author URI:        http://www.adsoptimal.com/company
  * Text Domain:       adsoptimal-locale
